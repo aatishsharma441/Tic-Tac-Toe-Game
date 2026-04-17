@@ -1,29 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Game</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>FUTURISTIC TIC-TAC-TOE · NEBULA EDITION</title>
+    <!-- Google Fonts & basic setup -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for crisp icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <main>
-        <h1>Tic-Tac-Toe</h1>
-        <div class="container">
-            <div class="game">
-                <button class="cell">X</button>
-                <button class="cell">O</button>
-                <button class="cell"></button>
-                <button class="cell"></button>
-                <button class="cell"></button>
-                <button class="cell"></button>
-                <button class="cell"></button>
-                <button class="cell"></button>
-                <button class="cell"></button>
+
+<body class="">
+    <div class="game-container">
+        <!-- Top bar: title + theme toggle + multiplayer toggle -->
+        <div class="top-bar">
+            <h1><i class="fas fa-bolt" style="margin-right: 8px;"></i>NEBULA·TAC</h1>
+            <div class="mode-actions">
+                <button class="icon-btn" id="multiplayerToggle" title="Toggle Multiplayer / vs AI">
+                    <i class="fas fa-user-friends"></i> <span id="modeLabel">vs AI</span>
+                </button>
+                <button class="icon-btn" id="themeToggle">
+                    <i class="fas fa-moon"></i><span> Dark</span>
+                </button>
             </div>
         </div>
-        <button id="resetBtn">Reset Game</button>
-    </main>
+
+        <!-- Scoreboard / Leaderboard (simplified) -->
+        <div class="score-panel">
+            <div class="score-item"><i class="fas fa-times" style="color:#3b82f6;"></i> <span class="badge"
+                    id="scoreX">0</span></div>
+            <div class="score-item"><i class="fas fa-circle" style="color:#ec4899;"></i> <span class="badge"
+                    id="scoreO">0</span></div>
+            <div class="score-item"><i class="fas fa-trophy"></i> <span class="badge" id="drawScore">0</span></div>
+        </div>
+
+        <!-- AI difficulty + prediction system -->
+        <div class="ai-tools">
+            <div class="difficulty-selector" id="difficultyGroup">
+                <button class="diff-btn active" data-diff="easy">Easy</button>
+                <button class="diff-btn" data-diff="medium">Medium</button>
+                <button class="diff-btn" data-diff="hard">Hard</button>
+            </div>
+            <div class="prediction-badge" id="aiPrediction">
+                <i class="fas fa-robot"></i> <span id="predictionText">AI ready</span>
+            </div>
+        </div>
+
+        <!-- Tic-Tac-Toe board -->
+        <div class="board" id="board">
+            <!-- 9 cells generated in JS -->
+        </div>
+
+        <!-- Real-time notification -->
+        <div class="notification-area" id="notification">
+            <div class="notification-text">
+                <i class="fas fa-bullhorn" style="opacity: 0.8;"></i>
+                <span id="notifMessage">Your turn · X</span>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="action-bar">
+            <button class="primary-btn" id="resetBtn"><i class="fas fa-sync-alt"></i> New Game</button>
+            <button class="secondary-btn" id="clearScoresBtn"><i class="fas fa-undo-alt"></i> Reset scores</button>
+        </div>
+        <div style="text-align: center; margin-top: 12px; opacity:0.7;">
+            <span class="multiplayer-tag"><i class="fas fa-microchip"></i> Glassmorphism AI · win animations ·
+                prediction</span>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
